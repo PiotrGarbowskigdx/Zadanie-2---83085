@@ -1,15 +1,14 @@
 
 using System;
 
-namespace ProstyWektor
+namespace Wektor
 {
-    // Bardzo prosta klasa wektora 3D (lub dowolnego rozmiaru)
     public class Wektor
     {
         // Tablica przechowująca współrzędne
         public double[] Wartosci;
 
-        // Konstruktor tworzący pusty wektor (wszystkie wartości = 0)
+        // Konstruktor tworzący pusty wektor 
         public Wektor(int rozmiar)
         {
             Wartosci = new double[rozmiar];
@@ -18,13 +17,13 @@ namespace ProstyWektor
         // Konstruktor tworzący wektor z gotowej tablicy
         public Wektor(double[] wartosciStartowe)
         {
-            // Tworzymy kopię, aby nie zmieniać tablicy przekazanej z zewnątrz
+            // Tworzymy kopię
             Wartosci = new double[wartosciStartowe.Length];
             for (int i = 0; i < wartosciStartowe.Length; i++)
                 Wartosci[i] = wartosciStartowe[i];
         }
 
-        // Dodawanie dwóch wektorów (statyczne, bo zwraca nowy wektor)
+        // Dodawanie dwóch wektorów
         public static Wektor Dodaj(Wektor a, Wektor b)
         {
             if (a.Wartosci.Length != b.Wartosci.Length)
@@ -36,7 +35,7 @@ namespace ProstyWektor
             return wynik;
         }
 
-        // Iloczyn skalarny (mnożymy i sumujemy po kolei)
+        // Iloczyn skalarny 
         public static double IloczynSkalarny(Wektor a, Wektor b)
         {
             if (a.Wartosci.Length != b.Wartosci.Length)
@@ -78,7 +77,7 @@ namespace ProstyWektor
             // Długość
             double dlugoscA = a.Dlugosc();
 
-            // Pokazujemy wyniki
+            // wyniki
             Console.WriteLine("a = " + a);
             Console.WriteLine("b = " + b);
             Console.WriteLine("a + b = " + suma);
